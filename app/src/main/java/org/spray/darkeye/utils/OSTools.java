@@ -10,7 +10,7 @@ public class OSTools {
 
 	private static OSType detectedOS;
 
-	public static OSType getOperatingSystemType() {
+	public static OSType getType() {
 		if (detectedOS == null) {
 			String OS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
 			if ((OS.indexOf("mac") >= 0) || (OS.indexOf("darwin") >= 0)) {
@@ -25,17 +25,27 @@ public class OSTools {
 		}
 		return detectedOS;
 	}
-	
+
 	public static boolean isOSWindows() {
-		return getOperatingSystemType().equals(OSType.Windows);
+		return getType().equals(OSType.Windows);
 	}
-	
+
 	public static boolean isOSMac() {
-		return getOperatingSystemType().equals(OSType.MacOS);
+		return getType().equals(OSType.MacOS);
 	}
 
 	public static boolean isOSLinux() {
-		return getOperatingSystemType().equals(OSType.Linux);
+		return getType().equals(OSType.Linux);
+	}
+
+	public static boolean is64Bit() {
+		boolean is64bit;
+		if (isOSWindows()) {
+			is64bit = (System.getenv("ProgramFiles(x86)") != null);
+		} else {
+			is64bit = (System.getProperty("os.arch").indexOf("64") != -1);
+		}
+		return is64bit;
 	}
 
 }

