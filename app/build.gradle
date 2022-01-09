@@ -20,11 +20,12 @@ dependencies {
 
     implementation 'com.google.guava:guava:30.1-jre'
     
-    implementation group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'
     implementation group: 'org.apache.commons', name: 'commons-email', version: '1.5'
+	shadow 'org.apache.commons:commons-email:1.5'
 	
+	// Web Cam screen libraries / you can delete it if you don't use it
+	implementation group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'
 	shadow 'com.github.sarxos:webcam-capture:0.3.12'
-    shadow 'org.apache.commons:commons-email:1.5'
 }
 
 application {

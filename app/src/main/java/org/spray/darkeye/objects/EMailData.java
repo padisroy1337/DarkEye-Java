@@ -4,13 +4,9 @@ public class EMailData {
 
 	private String email, password;
 	private EMailMethod method;
-	
-	public EMailData(String email) {
-		this(email, EMailMethod.NONE);
-	}
 
-	public EMailData(String email, EMailMethod method) {
-		this(email, "", method);
+	public EMailData(String email) {
+		this(email, "", EMailMethod.NONE);
 	}
 
 	public EMailData(String email, String password, EMailMethod method) {

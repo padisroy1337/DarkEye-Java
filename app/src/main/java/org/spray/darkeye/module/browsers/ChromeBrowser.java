@@ -21,6 +21,11 @@ public class ChromeBrowser extends BrowserModule {
 	}
 	
 	@Override
+	public String getBookmarks() {
+		return getFolder() + "/Bookmarks";
+	}
+	
+	@Override
 	public String getLevelDB() {
 		return getFolder() + "/Sync Data/leveldb";
 	}
@@ -42,5 +47,4 @@ public class ChromeBrowser extends BrowserModule {
 		}
 		return folder;
 	}
-
 }

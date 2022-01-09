@@ -16,8 +16,7 @@ public class BrowserManager extends CopyManager {
 		super(path);
 	}
 
-	private List<BrowserModule> browsers = Arrays.asList(
-			new ChromeBrowser(), new OperaBrowser(), new YandexBrowser());
+	private List<BrowserModule> browsers = Arrays.asList(new ChromeBrowser(), new OperaBrowser(), new YandexBrowser());
 
 	@Override
 	protected List<Data> getData() {

